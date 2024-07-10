@@ -8,8 +8,8 @@ spring:
       date: iso
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: ${POSTGRES_USERNAME}
-    password: ${POSTGRES_PASSWORD}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     url: jdbc:postgresql://localhost:5433/authDB
   jpa:
     properties:
