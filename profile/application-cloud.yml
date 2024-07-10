@@ -9,8 +9,8 @@ spring:
     url: jdbc:postgresql://localhost:5433/profileDB
   jpa:
     properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
       hibernate:
-        show_sql: true
         format_sql: true
         hbm2ddl:
           auto: create

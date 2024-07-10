@@ -10,11 +10,14 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: password
-    url: jdbc:postgresql://localhost:5433/profileDB
+    url: jdbc:postgresql://localhost:5433/authDB
   jpa:
     properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
       hibernate:
         show_sql: true
         format_sql: true
         hbm2ddl:
           auto: create
+
+
