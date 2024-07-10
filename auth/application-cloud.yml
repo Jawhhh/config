@@ -1,0 +1,39 @@
+logging:
+  level:
+    root: info
+
+spring:
+  mvc:
+    format:
+      date: iso
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: password
+    url: jdbc:postgresql://localhost:5433/profileDB
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hbm2ddl:
+          auto: create
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: 802529197361-iob8naaj0k7agrpphsev9a0bb93tkpa6.apps.googleusercontent.com
+#            client-secret: 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
+#            redirect-uri: http://localhost:8080/login/oauth2/code/google
+#            scope:
+#              - openid
+#              - email
+#              - profile
