@@ -4,8 +4,8 @@ spring:
       date: iso
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: password
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
     url: jdbc:postgresql://localhost:5433/profileDB
   jpa:
     properties:
