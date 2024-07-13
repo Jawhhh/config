@@ -17,8 +17,6 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-        hbm2ddl:
-          auto: create
           
 eureka:
   client:
