@@ -5,17 +5,16 @@ spring:
     port: 465
     protocol: smtps
     username: testsender52@yandex.ru
-    password: ---------
   kafka:
     consumer:
-      bootstrap-servers: localhost:9092,localhost:9094
+      bootstrap-servers: kafka-1:9092,kafka-2:9094
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       group-id: email-notification-events
       properties:
         spring.json.trusted.packages: "*"
     producer:
-      bootstrap-servers: localhost:9092,localhost:9094
+      bootstrap-servers: kafka-1:9092,kafka-2:9094
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
@@ -29,7 +28,7 @@ eureka:
   client:
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery:8761/eureka
     registry-fetch-interval-seconds: 5
     instance-info-replication-interval-seconds: 5
   instance:

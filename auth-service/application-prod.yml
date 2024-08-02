@@ -14,13 +14,10 @@ token:
     key: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
 
 spring:
-  cloud:
-    config:
-      fail-fast: true
   kafka:
     producer:
       acks: all
-      bootstrap-servers: localhost:9092,localhost:9094
+      bootstrap-servers: kafka-1:9092,kafka-2:9094
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       retries: 10
@@ -35,7 +32,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: jawh
     password: password
-    url: jdbc:postgresql://localhost:5434/auth_db
+    url: jdbc:postgresql://postgres:5434/auth_db
   jpa:
     properties:
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -50,7 +47,7 @@ eureka:
   client:
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery:8761/eureka
     registry-fetch-interval-seconds: 5
     instance-info-replication-interval-seconds: 5
   instance:
