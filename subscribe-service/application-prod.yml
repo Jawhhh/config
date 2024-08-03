@@ -24,11 +24,10 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
       group-id: subscribe-service-group
-    kafka:
-      producer:
-        bootstrap-servers: kafka-1:9092,kafka-2:9094
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    producer:
+      bootstrap-servers: kafka-1:9092,kafka-2:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   mvc:
     format:
       date: iso
